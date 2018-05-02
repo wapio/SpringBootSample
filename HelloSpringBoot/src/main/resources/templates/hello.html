@@ -3,12 +3,29 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" media="all" th:href="@{/css/commonCss.css}" />
+		<link rel="stylesheet" media="all" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
 		<title>Sample Watson</title>
+		<script type="text/javascript" th:src="@{/webjars/jquery/1.12.4/jquery.min.js}" ></script>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}" ></script>
+		<script>
+		window.onload = () => {
+		}
+		
+		const btn = () => {
+			const profile = document.getElementById("profile");
+			$.post("./result", profile.textContent);
+		}
+			
+		</script>
 	</head>
 	<body>
-		<h1>Sample Watson</h1>
-	   	<div>下のフォームに文章を入力してね<div>
-	   	<textarea id="profile"></textarea>
-	    <div><button>診断</button><div>
+		<div id="container">
+			<h1>Sample Watson</h1>
+		   	<div>下のフォームに文章を入力してね</div>
+		   		<textarea id="profile"></textarea>
+		    <div>
+		    	<button id="btn" onclick="btn()">診断</button>
+		    </div>
+	    </div>
 	</body>
 </html>

@@ -6,6 +6,11 @@ import javax.validation.constraints.NotNull;
 
 public class MenuForm implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	@NotNull
 	private String profile;
 
